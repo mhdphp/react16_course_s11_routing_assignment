@@ -1,0 +1,11 @@
+
+.App .navList {
+  list-style-type: none;
+  padding: 0;
+  margin-left: 0;
+}
+
+.App .navList li {
+  display: inline;
+  margin-left: 10px;
+}
