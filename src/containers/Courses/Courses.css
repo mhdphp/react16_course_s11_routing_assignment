@@ -13,3 +13,8 @@
     margin: 10px;
     cursor: pointer;
 }
+
+.Course a,
+.Courses a {
+    text-decoration: none;
+}

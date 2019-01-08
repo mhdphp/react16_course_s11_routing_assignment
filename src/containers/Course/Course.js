@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 
 class Course extends Component {
+    
     render () {
+        console.log(this.props);
         return (
             <div style={this.props.courseStyle}>
-                <h1>{this.props.title}</h1>
-                <p>You selected the Course with ID:{this.props.courseId}</p>
+                <h1>_TITLE_</h1>
+                <p>You have selected course with ID:_ID_</p>
             </div>
         );
     }
 }
 
-export default Course;
+export default withRouter(Course);
