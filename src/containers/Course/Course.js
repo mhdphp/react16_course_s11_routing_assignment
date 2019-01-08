@@ -4,17 +4,23 @@ class Course extends Component {
     state = {
         courseTitle: ''
     }
-
+    // first we call this method when component is mount
     componentDidMount () {
-        // URLSearchParams() a parser for URL strings
-        const query = new URLSearchParams(this.props.location.search);
+        this.parseQueryParams();
+    }
 
-        // result in an array of keys and values - query.entries()
+    // we should this method when update as well
+    componentDidUpdate () {
+        this.parseQueryParams();
+    }
+
+    parseQueryParams () {
+        const query = new URLSearchParams(this.props.location.search);
         for (let item of query.entries()) {
-            // item is an array with two elements, first is the key 'title'
-            // the second is the value
-            console.log(item);
-            this.setState({courseTitle: item[1]});
+            // to avoid infinite looping
+            if(this.state.courseTitle !== item[1]){
+                this.setState({courseTitle: item[1]});
+            }
         }
     }
 

@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Route, Link } from 'react-router-dom';
 
+import Course from '../Course/Course';
 import './Courses.css';
+
 
 class Courses extends Component {
     state = {
@@ -22,7 +24,7 @@ class Courses extends Component {
                 /** 
                  * using the dynamic way of defining the url - from the starting point
                  * this.props.match.url
-                 */ 
+                 */
                 <Link 
                     key={course.id} 
                     // passing the parameters in javascript object
@@ -43,6 +45,7 @@ class Courses extends Component {
                 <section className="Courses">
                     {courses}
                 </section>
+                <Route path={this.props.match.url + "/:courseId"} component={Course}/>
             </div>
         );
     }
