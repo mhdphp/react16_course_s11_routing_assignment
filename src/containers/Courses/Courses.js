@@ -23,7 +23,10 @@ class Courses extends Component {
                  * using the dynamic way of defining the url - from the starting point
                  * this.props.match.url
                  */ 
-                <Link to={this.props.match.url + '/course'} key={course.id}>
+                <Link 
+                    key={course.id} 
+                    // passing two parameters in route
+                    to={this.props.match.url + '/'+ course.id + '/' + course.title}>
                     <article className="Course">
                         {course.title}
                     </article>

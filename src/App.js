@@ -29,10 +29,13 @@ class App extends Component {
           
           <Switch>
             <Route path="/info" component={AssignmentDescription} />
-           {/* when using Switch the order of routs is important 
-            * from specific to general
+           {/* 
+            * the name of the params is courseId,
+            * the of the params is courseTitle
+            * it can be accessed by this.props.match.params.courseId
+            * it can be accessed by this.prosps.match.params.courseTitle
             */}
-            <Route path="/courses/course" component={Course}/>
+            <Route path="/courses/:courseId/:courseTitle" component={Course}/>
             <Route path="/courses" component={Courses}/>
             <Route path="/users" component={Users} />
             <Redirect from="/user-courses" exact to="/courses"/>
