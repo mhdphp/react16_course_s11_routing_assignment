@@ -35,7 +35,7 @@ class App extends Component {
             * it can be accessed by this.props.match.params.courseId
             * it can be accessed by this.prosps.match.params.courseTitle
             */}
-            <Route path="/courses/:courseId/:courseTitle" component={Course}/>
+            <Route path="/courses/:courseId" component={Course}/>
             <Route path="/courses" component={Courses}/>
             <Route path="/users" component={Users} />
             <Redirect from="/user-courses" exact to="/courses"/>

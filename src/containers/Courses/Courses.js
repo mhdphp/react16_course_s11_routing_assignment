@@ -25,8 +25,11 @@ class Courses extends Component {
                  */ 
                 <Link 
                     key={course.id} 
-                    // passing two parameters in route
-                    to={this.props.match.url + '/'+ course.id + '/' + course.title}>
+                    // passing the parameters in javascript object
+                    to ={{
+                        pathname: this.props.match.url + '/'+ course.id,
+                        search: "?clickedCourseTitle=" + course.title
+                    }}>
                     <article className="Course">
                         {course.title}
                     </article>
